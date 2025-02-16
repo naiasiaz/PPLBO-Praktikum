@@ -20,7 +20,7 @@ Proyek ini terdiri dari beberapa layanan mikro yang diatur dalam direktori terpi
 ## 🔧 **Teknologi yang Digunakan**
 
 - **Spring Boot**: Framework untuk membangun aplikasi Java berbasis Spring.
-- **MongoDB**: Database NoSQL yang digunakan oleh `product-service-sabil`.
+- **MongoDB**: Database NoSQL yang digunakan oleh `product-service`.
 - **MySQL**: Database relasional yang digunakan oleh `inventory-service` dan `order-service`.
 - **Docker**: Platform untuk mengembangkan, mengirim, dan menjalankan aplikasi dalam kontainer.
 - **Flyway**: Alat untuk migrasi database.
