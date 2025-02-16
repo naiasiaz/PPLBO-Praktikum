@@ -7,16 +7,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
+import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.testcontainers.containers.MySQLContainer;
+
+import com.naia.microservices.order.stubs.InventoryClientStub;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureWireMock(port = 0)
 class OrderServiceApplicationTests {
 
     @SuppressWarnings("rawtypes")
 	@ServiceConnection
-    static MySQLContainer mySQLContainer = new MySQLContainer("mysql:8.3.0");
+    static MySQLContainer mySQLContainer = new MySQLContainer("mysql:latest");
     @LocalServerPort
     private Integer port;
 
@@ -38,8 +42,9 @@ class OrderServiceApplicationTests {
                      "price": 1000,
                      "quantity": 1
                 }
-                """;
+                """; 
 
+        InventoryClientStub.stubInventoryCall("iphone_15", 1);
 
         var responseBodyString = RestAssured.given()
                 .contentType("application/json")
