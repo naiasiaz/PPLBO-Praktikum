@@ -13,3 +13,5 @@ public class OrderServiceApplication {
 	}
 
 }
+
+// knp openfeign diganti? karena tidak support swagger 

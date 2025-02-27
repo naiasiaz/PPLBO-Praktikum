@@ -13,3 +13,7 @@ public class InventoryClientStub {
                         .withBody("true")));
     }
 }
+
+// kenapa yang di mock urlnya? knp ga langsung manggil inventory service?
+// karena kita hanya menguji service itu saja, bukan service lainnya
+// kita hanya ingin tahu apakah service ini berjalan dengan baik atau tidak
