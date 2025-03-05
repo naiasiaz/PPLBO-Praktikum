@@ -15,3 +15,5 @@ public class OrderServiceApplication {
 }
 
 // knp openfeign diganti? karena tidak support swagger 
+// mvn dependency:purge-local-repository
+// mvn clean install
