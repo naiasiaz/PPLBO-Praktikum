@@ -1,0 +1,4 @@
+com\javatechie\dto\Book.class
+com\javatechie\service\BookService.class
+com\javatechie\BookServiceApplication.class
+com\javatechie\controller\BookController.class
